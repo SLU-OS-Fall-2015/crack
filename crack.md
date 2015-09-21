@@ -3,13 +3,11 @@ crack
 
 multithreaded brute-force password hash cracker
 
-Usage
-=====
+### Usage
 
 `crack threads keysize target`
 
-Description
-===========
+### Description
 
 `crack` should attempt to find the password
 associated to the `target` DES hash. It does this by trying all possible
@@ -41,8 +39,7 @@ When a match to `target` is found, the program should print the cracked
 password and exit immediately. If the entire space of passwords is
 searched with no match, the program should exit with no output.
 
-Hints 
-=====
+### Hints 
 
 See `/export/mathcs/home/public/clair/bin/crack` for a working version.
 There is also a useful utility `encode` in the public `os/demo_sec`
@@ -67,8 +64,7 @@ length, and then have `main` call it in a loop from 1 to `keysize`.
 For extra credit, add optional command line switches that allow
 searching for lowercase, uppercase, symbols, or combinations of them.
 
-Useful Man Pages
-================
+### Useful Man Pages
 
 `pthread_create`(3)
 
