@@ -1,18 +1,17 @@
-Name {#name .unnumbered}
-====
+crack
+=====
 
-<span><span>crack</span></span> – multithreaded brute-force password
-hash cracker
+multithreaded brute-force password hash cracker
 
-Usage {#usage .unnumbered}
+Usage
 =====
 
 `crack threads keysize target`
 
-description {#description .unnumbered}
+Description
 ===========
 
-<span><span>crack</span></span> should attempt to find the password
+`crack` should attempt to find the password
 associated to the `target` DES hash. It does this by trying all possible
 lowercase alphabetic (a-z) passwords of length up to `keysize`. The
 program should run with `threads` concurrent threads for speed.
@@ -26,13 +25,14 @@ The classic hash function on Unix systems is `crypt`(3). To make things
 harder on crackers, `crypt` also uses a two character string called a
 *salt* which it combines with the password to create the hash.
 Schematically:
-$$\text{password} + \text{salt} \xrightarrow{\text{crypt}}  \text{hash}$$
+
+password + salt ----crypt----> hash
 
 The salt is visible in the hash as the first two characters. As an
 example, a password ‘`apple`’ and salt ‘`na`’ become the hash
 ‘`na3C5487Wz4zw`’.
 
-The <span><span>crack</span></span> program should extract the salt from
+The `crack` program should extract the salt from
 the first two characters of target, then repeatedly call `crypt` using
 all possible passwords built of up to `keysize` lowercase alphabetic
 characters.
@@ -41,7 +41,7 @@ When a match to `target` is found, the program should print the cracked
 password and exit immediately. If the entire space of passwords is
 searched with no match, the program should exit with no output.
 
-hints {#hints .unnumbered}
+Hints 
 =====
 
 See `/export/mathcs/home/public/clair/bin/crack` for a working version.
@@ -67,10 +67,10 @@ length, and then have `main` call it in a loop from 1 to `keysize`.
 For extra credit, add optional command line switches that allow
 searching for lowercase, uppercase, symbols, or combinations of them.
 
-Useful Man Pages {#useful-man-pages .unnumbered}
+Useful Man Pages
 ================
 
-<span>2</span> `pthread_create`(3)
+`pthread_create`(3)
 
 `pthread_join`(3)
 
@@ -91,5 +91,3 @@ Useful Man Pages {#useful-man-pages .unnumbered}
 `strcpy`(3)
 
 `strncpy`(3)
-
- 
